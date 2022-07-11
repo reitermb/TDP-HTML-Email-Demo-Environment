@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <!-- The title is useful for screenreaders reading a document. Use your sender name or subject line. -->
-    <title>Inactive Account</title>
+    <title>Inactive Account 10 days Notice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Never disable zoom behavior! Fine to set the initial width and scale, but allow users to set their own zoom preferences. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +79,7 @@
         <!-- Logo section and header. Headers are useful landmark elements. -->
         <header>
             <a href="https://tdp-frontend-a11y.app.cloud.gov/" style="background-color: #fff !important;">
-                <img src="https://i.imgur.com/1pyeyQ5.png" alt="Administration for Children & Families: Office of Family Assistance" height="auto" width="300">
+                <img src="https://i.imgur.com/ydabPh2.png" alt="TANF Data Portal" height="auto" width="300">
             </a>
             <!-- The h1 is the main heading of the document and should come first. -->
             <h1 style="color: #000000; font-size: 42px; font-weight: 800; line-height: 32px; margin: 48px; text-align: left;">
@@ -97,11 +97,18 @@
                 <p style="color: #000000;">
                   <p>Dear [FirstName],</p>
 
-                  <p>We noticed that you haven't logged into your TDP account for more than 180 days</p>
+                  <p>We noticed that you have not logged into the TANF Data Portal (TDP) for almost 180 days.</p>
 
-                  <p>To keep you account active, please log into TDP within the next 10 days.</p>
+                  <p>Since your account has been inactive, it’s scheduled to be deactivated in <b>10</b> days on <b>{MM,DD,YYYY}</b> at <b>5PM EST</b>. However, if you are interested in keeping your account, it’s easy! </p>
 
-                  <p>If you have any questions about your TDP account, please reach out to the TDP Admin team at <a href="mailto:TANFData@acf.hhs.gov" target="_blank">TANFData@acf.hhs.gov</a>.</p>
+                  <!-- This link uses descriptive text to inform the user what will happen with the link is tapped. -->
+                  <!-- It also uses inline styles since some email clients won't render embedded styles from the head. -->
+                  <!-- <a href="" style="color: #336a90; text-decoration: underline;">Reset your password now</a> -->
+                  <p><a class="button" href="https://tdp-frontend-a11y.app.cloud.gov/"
+                  style="background-color:#336a90;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:60px;text-align:center;text-decoration:none;width: auto; padding-left: 24px; padding-right: 24px;-webkit-text-size-adjust:none;">Sign in to keep your account active</a></p>
+
+                  <b>Need help?</b><br>
+                  We're here for you! Check out the <a href="http://tdp-project-updates.app.cloud.gov/knowledge-center/" target="_blank">Getting Started</a> guide or reach out to the TDP Admin team at <a href="mailto:TANFData@acf.hhs.gov" target="_blank">TANFData@acf.hhs.gov</a>.
 
                   <p>Thank you,</p>
                   TDP Team
