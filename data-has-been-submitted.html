@@ -53,6 +53,10 @@
         /* Embrace established conventions like underlines on links to keep emails accessible. */
         a { color: #336a90; font-weight: 600; text-decoration: underline; }
         a:hover { color: #ffffff !important; background-color: #264A64 !important; text-decoration: underline; !important; }
+        table {width: 100%; background-color: #ffffff; border-width: 1px; border-color: #000000; border-style: solid; color: #000000; text-align: left;}
+        thead {border-style: solid; border-color: #000000; border-width: 1px; background-color: #e6e6e6;}
+        th {padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;}
+        td {padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;}
 
         /* These rules adjust styles for desktop devices, keeping the email responsive for users. */
         /* Some email clients don't properly apply media query-based styles, which is why we go mobile-first. */
@@ -98,11 +102,37 @@
                   <p>Hello,</p>
 
                   <p><b>{STTName}</b> has successfully submitted data files on <b>{SubmissionDate}</b> in Fiscal Year <b>{YYYY} - {Quarter (Month-Month}</b> for the following sections:</p>
+<table>
+                  <thead>
+  <tr>
+    <th>Section</th>
+    <th>Submitted By</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Section 1 (Active Case Data)</td>
+    <td>Miriam Maisel</td>
 
-                  {SectionNumber} - Active Case Data<br>
-                  {SectionNumber} - Closed Case Data<br>
-                  {SectionNumber} - Aggregate Data<br>
-                  {SectionNumber} - Stratum Data<br>
+  </tr>
+  <tr>
+    <td>Section 2 (Active Case Data)</td>
+    <td>Miriam Maisel</td>
+
+  </tr>
+  <tr>
+    <td>Section 3 (Aggregate Data)</td>
+    <td>Miriam Maisel</td>
+
+  </tr>
+  <tr>
+    <td>Section 4 (Sample Data)</td>
+    <td>Miriam Maisel</td>
+
+  </tr>
+
+</tbody>
+</table>
 
                   <p>Please contact TDP Admin team at <a href="mailto:TANFData@acf.hhs.gov" target="_blank">TANFData@acf.hhs.gov</a> for further assistance.</p>
 
