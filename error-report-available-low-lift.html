@@ -8,6 +8,15 @@
     <!-- Never disable zoom behavior! Fine to set the initial width and scale, but allow users to set their own zoom preferences. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+function showDiv(id) {
+  var divs = document.getElementsByClassName("mydiv");
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
+</script>
     <style type="text/css">
         /* CLIENT-SPECIFIC STYLES */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -66,7 +75,18 @@
         }
     </style>
   </head>
+
   <body style="margin: 0 !important; padding: 0 !important;">
+	<br>
+	<input type="radio" name="div" value="div1" onclick="showDiv('div1')" checked> Near Term Lower-lift
+	<p>One email per submitted file. Two possible subject lines: "Error Report Available" or "Processed Without Errors"</p>
+	<br>
+	<input type="radio" name="div" value="div2" onclick="showDiv('div2')"> Aggregation Enhancement
+	<p>Aggregated notifications (one email per submission). Two possible subject lines: "Error Report(s) Available" or "Processed Without Errors"</p>
+	<br>
+	<input type="radio" name="div" value="div3" onclick="showDiv('div3')"> Data File Linking Enhancement
+	<p>TDP passes search context to URLs (e.g. /data-files/2023-q2/submission-history) to allow for direct links to the relevant results in TDP</p>
+	<hr>
 
     <!-- Some preview text. -->
     <div style="display: none; max-height: 0; overflow: hidden;">
@@ -77,7 +97,7 @@
     &nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;
     </div>
 
-
+<div id="div1" class="mydiv" style="display:block">
     <div role="article" aria-label="TDP - Email Heading 1" lang="en" style="background-color: white; color: #2b2b2b; font-family: 'Merriweather', Cambria, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-weight: 400; line-height: 28px; margin: 0 auto; max-width: 720px; padding: 40px 20px 40px 20px;">
 
         <!-- Logo section and header. Headers are useful landmark elements. -->
@@ -107,17 +127,20 @@
   <tr>
     <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Section</th>
     <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Submitted By</th>
+    <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
     <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+        <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
 
   </tr>
 
 </tbody>
 </table>
+
 
                   <p>Your data file has been processed and error reports can now be accessed via the Submission History tab of the Data Files page. <a href="https://tdp-project-updates.app.cloud.gov/knowledge-center/view-submission-history.html" target="_blank">Read more about using Submission History</a></p>
 
@@ -147,5 +170,192 @@
         </footer>
 
     </div>
+</div>
+
+
+<div id="div2" class="mydiv" style="display:none">
+     <div role="article" aria-label="TDP - Email Heading 1" lang="en" style="background-color: white; color: #2b2b2b; font-family: 'Merriweather', Cambria, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-weight: 400; line-height: 28px; margin: 0 auto; max-width: 720px; padding: 40px 20px 40px 20px;">
+
+        <!-- Logo section and header. Headers are useful landmark elements. -->
+        <header>
+            <a href="https://tdp-frontend-a11y.app.cloud.gov/" style="background-color: #fff !important;">
+                <img src="https://i.imgur.com/ydabPh2.png" alt="TANF Data Portal" height="auto" width="300">
+            </a>
+            <!-- The h1 is the main heading of the document and should come first. -->
+            <h1 style="color: #000000; font-size: 42px; font-weight: 800; line-height: 32px; margin: 48px; text-align: left;">
+                {Fiscal Year, Quarter} Error Report(s) Available
+            </h1>
+        </header>
+
+        <!-- Main content section. Main is a useful landmark element. -->
+        <main>
+            <!-- This div is purely presentational, providing a container for the message. -->
+            <div style="background-color: #e2eff7; border-radius: 4px; padding: 24px 48px; font-family: Arial;">
+
+
+                <!-- Body copy -->
+                <p style="color: #000000;">
+                  <p>Hello,</p>
+
+                  <p><b>{STTName}</b> has successfully submitted the following data files for Fiscal Year <b>{YYYY} - {Quarter (Month-Month}</b> on <b>{SubmissionDate}</b>:</p>
+<table style="width: 100%; background-color: #ffffff; border-width: 1px; border-color: #000000; border-style: solid; color: #000000; text-align: left; margin-bottom: 8px;">
+                  <thead style="border-style: solid; border-color: #000000; border-width: 1px; background-color: #e6e6e6;">
+  <tr>
+    <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Section</th>
+    <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Submitted By</th>
+       <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">No Errors</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+
+</tbody>
+</table>
+
+                  <p>Your data files have been processed and error report(s) can now be accessed via the Submission History tab of the Data Files page. <a href="https://tdp-project-updates.app.cloud.gov/knowledge-center/view-submission-history.html" target="_blank">Read more about using Submission History</a></p>
+
+
+ <p><a class="button" href="https://tdp-frontend-a11y.app.cloud.gov/"
+                  style="background-color:#336a90;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:60px;text-align:center;text-decoration:none;width: auto; padding-left: 24px; padding-right: 24px;-webkit-text-size-adjust:none;">Sign in to TDP</a></p>
+
+
+                  <p>Please contact TDP Admin team at <a href="mailto:TANFData@acf.hhs.gov" target="_blank">TANFData@acf.hhs.gov</a> if you need further assistance.</p>
+
+                  <p>Thank you,</p>
+                  TDP Team
+                </p>
+
+                <!-- This link uses descriptive text to inform the user what will happen with the link is tapped. -->
+                <!-- It also uses inline styles since some email clients won't render embedded styles from the head. -->
+                <!-- <a href="" style="color: #336a90; text-decoration: underline;">Reset your password now</a> -->
+              </div>
+        </main>
+
+        <!-- Footer information. Footer is a useful landmark element. -->
+        <footer>
+            <!-- Since this is a transactional email, you aren't required to include opt-out language. -->
+            <!-- <p style="font-size: 16px; font-weight: 400; line-height: 24px; margin-top: 48px; margin: 48px; font-family: Arial;">
+                You received this email because you care about creating more accessible experiences for people-->
+            </p>
+        </footer>
+
+    </div>
+</div>
+
+
+<div id="div3" class="mydiv" style="display:none">
+     <div role="article" aria-label="TDP - Email Heading 1" lang="en" style="background-color: white; color: #2b2b2b; font-family: 'Merriweather', Cambria, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-weight: 400; line-height: 28px; margin: 0 auto; max-width: 720px; padding: 40px 20px 40px 20px;">
+
+        <!-- Logo section and header. Headers are useful landmark elements. -->
+        <header>
+            <a href="https://tdp-frontend-a11y.app.cloud.gov/" style="background-color: #fff !important;">
+                <img src="https://i.imgur.com/ydabPh2.png" alt="TANF Data Portal" height="auto" width="300">
+            </a>
+            <!-- The h1 is the main heading of the document and should come first. -->
+            <h1 style="color: #000000; font-size: 42px; font-weight: 800; line-height: 32px; margin: 48px; text-align: left;">
+                {Fiscal Year, Quarter} Error Report(s) Available
+            </h1>
+        </header>
+
+        <!-- Main content section. Main is a useful landmark element. -->
+        <main>
+            <!-- This div is purely presentational, providing a container for the message. -->
+            <div style="background-color: #e2eff7; border-radius: 4px; padding: 24px 48px; font-family: Arial;">
+
+
+                <!-- Body copy -->
+                <p style="color: #000000;">
+                  <p>Hello,</p>
+
+                  <p><b>{STTName}</b> has successfully submitted the following data files for Fiscal Year <b>{YYYY} - {Quarter (Month-Month}</b> on <b>{SubmissionDate}</b>:</p>
+<table style="width: 100%; background-color: #ffffff; border-width: 1px; border-color: #000000; border-style: solid; color: #000000; text-align: left; margin-bottom: 8px;">
+                  <thead style="border-style: solid; border-color: #000000; border-width: 1px; background-color: #e6e6e6;">
+  <tr>
+    <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Section</th>
+    <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Submitted By</th>
+       <th style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">No Errors</td>
+
+  </tr>
+   <tr>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{File Type}{Section Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">{User's Name}</td>
+    <td style="padding: 8px; border-style: solid; border-color: #000000; border-width: 1px;">Error Report Available</td>
+
+  </tr>
+
+</tbody>
+</table>
+
+                  <p>Your data files have been processed and error report(s) can now be accessed via the Submission History tab of the Data Files page. <a href="https://tdp-project-updates.app.cloud.gov/knowledge-center/view-submission-history.html" target="_blank">Read more about using Submission History</a></p>
+
+
+ <p><a class="button" href="https://tdp-frontend-a11y.app.cloud.gov/data-files/2023-q2/submission-history"
+                  style="background-color:#336a90;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:18px;font-weight:bold;line-height:60px;text-align:center;text-decoration:none;width: auto; padding-left: 24px; padding-right: 24px;-webkit-text-size-adjust:none;">View Error Reports for {Fiscal Year}{Quarter}</a></p>
+
+
+                  <p>Please contact TDP Admin team at <a href="mailto:TANFData@acf.hhs.gov" target="_blank">TANFData@acf.hhs.gov</a> if you need further assistance.</p>
+
+                  <p>Thank you,</p>
+                  TDP Team
+                </p>
+                <!-- This link uses descriptive text to inform the user what will happen with the link is tapped. -->
+                <!-- It also uses inline styles since some email clients won't render embedded styles from the head. -->
+                <!-- <a href="" style="color: #336a90; text-decoration: underline;">Reset your password now</a> -->
+              </div>
+        </main>
+
+        <!-- Footer information. Footer is a useful landmark element. -->
+        <footer>
+            <!-- Since this is a transactional email, you aren't required to include opt-out language. -->
+            <!-- <p style="font-size: 16px; font-weight: 400; line-height: 24px; margin-top: 48px; margin: 48px; font-family: Arial;">
+                You received this email because you care about creating more accessible experiences for people-->
+            </p>
+        </footer>
+
+    </div>
+</div>
+
   </body>
 </html>
